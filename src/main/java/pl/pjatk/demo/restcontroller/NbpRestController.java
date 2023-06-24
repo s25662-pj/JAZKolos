@@ -35,7 +35,8 @@ public class NbpRestController {
     @GetMapping("/{currency}")
     ResponseEntity<Float> averageExchangeRate(
             @PathVariable String currency,
-            @RequestParam(required = false, defaultValue = "2012-01-01") String startDate, String endDate)
+            @RequestParam(required = true, defaultValue = "2012-01-01") String startDate,
+            @RequestParam(required = true, defaultValue = "2012-01-03") String endDate)
 
 
     {

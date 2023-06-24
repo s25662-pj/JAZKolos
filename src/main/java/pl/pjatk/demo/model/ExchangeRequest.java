@@ -16,8 +16,10 @@ public class ExchangeRequest {
     @Max(3)
     private String currency;
     @NotBlank
+    @Max(12)
     private String startDay;
     @NotBlank
+    @Max(12)
     private String endDate;
     @NotBlank
     private float rate;

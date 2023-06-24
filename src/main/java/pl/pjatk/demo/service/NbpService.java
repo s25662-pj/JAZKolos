@@ -36,7 +36,7 @@ public class NbpService {
             sum += rate.getMid();
         }
         float rate = sum/response.getRates().size();
-        ExchangeRequest exchangeRequest = new ExchangeRequest(currency, startDate, endDate,rate, LocalDateTime.now());
+        ExchangeRequest exchangeRequest = new ExchangeRequest(currency, startDate, endDate, rate, LocalDateTime.now());
         projectRepository.save(exchangeRequest);
         return rate;
     }
