@@ -25,8 +25,6 @@ public class NbpService {
     }
 
 
-
-
     public float averageExchangeRate(String currency, String startDate, String endDate){
         ExchangeRateResponse response = webClient.get()
                 .uri("https://api.nbp.pl/api/exchangerates/rates/a/" + currency + "/" + startDate + "/" + endDate + "/?format=json")
@@ -38,7 +36,7 @@ public class NbpService {
             sum += rate.getMid();
         }
         float rate = sum/response.getRates().size();
-        ExchangeRequest exchangeRequest = new ExchangeRequest(currency,days,rate, LocalDateTime.now());
+        ExchangeRequest exchangeRequest = new ExchangeRequest(currency, startDate, endDate,rate, LocalDateTime.now());
         projectRepository.save(exchangeRequest);
         return rate;
     }

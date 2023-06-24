@@ -22,7 +22,7 @@ public class NbpRestController {
         this.nbpService = nbpService;
     }
 
-    @Operation(summary = "Get an average rate of currency for provided amount last days")
+    @Operation(summary = "Get an average rate of currency from date to date")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Average exchange rate calculated",
                     content = @Content(schema = @Schema(type = "number", format = "float"))),
